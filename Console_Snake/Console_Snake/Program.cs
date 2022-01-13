@@ -10,7 +10,7 @@ namespace Console_Snake
     {
         static void Main(string[] args)
         {
-            int x1 = 4, x2 = 5;
+            int x1 = 4, y1 = 5;
             char sym1 = '*';
             Draw(x1,y1,sym1);
             Console.ReadKey();
