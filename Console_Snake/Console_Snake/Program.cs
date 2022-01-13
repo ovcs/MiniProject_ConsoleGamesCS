@@ -16,8 +16,11 @@ namespace Console_Snake
             Point p4 = new Point(6, 2, '(');
             p1.Draw();
 
-            HorisontalLine line = new HorisontalLine(1,30,8,'+');
-            line.Drow();
+            HorisontalLine hline = new HorisontalLine(1,30,8,'+');
+            hline.Drow();
+
+            VerticalLine vline = new VerticalLine(1, 1, 8, '+');
+            vline.Drow();
 
             Console.ReadKey();
         }
