@@ -21,6 +21,9 @@ namespace Console_Snake
             VerticalLine rightVline = new VerticalLine(dWidth, dStart, dHeight, '*');
             upHline.Drow(); downHline.Drow(); leftVline.Drow(); rightVline.Drow();
 
+            Point p = new Point(dWidth / 2, dHeight / 2, '*');
+            Snake snake = new Snake(p, 4, Direction.RIGHT);
+
             Console.ReadKey();
         }
     }
