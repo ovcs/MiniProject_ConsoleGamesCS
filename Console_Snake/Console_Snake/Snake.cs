@@ -8,7 +8,7 @@ namespace Console_Snake
 {
     class Snake : Figure
     {
-        public Direction direction;
+        Direction direction;
         public Snake(Point tail, int length, Direction _direction)
         {
             pList = new List<Point>();
