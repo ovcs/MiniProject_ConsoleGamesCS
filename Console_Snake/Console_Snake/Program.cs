@@ -23,6 +23,7 @@ namespace Console_Snake
 
             Point p = new Point(dWidth / 2, dHeight / 2, '*');
             Snake snake = new Snake(p, 4, Direction.RIGHT);
+            snake.Drow();
 
             Console.ReadKey();
         }
