@@ -12,8 +12,6 @@ namespace Console_Snake
         int mapWidth;
         int mapHeight;
         char sym;
-
-        Random rnd = new Random();
         
         public FoodCreator(int mapStart, int mapWidth, int mapHeight, char sym)
         {

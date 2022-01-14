@@ -50,5 +50,18 @@ namespace Console_Snake
                 case ConsoleKey.DownArrow: direction = Direction.DOWN; break;
             }
         }
+
+        internal bool Eat(Point food)
+        {
+            Point head = GetNextPoint();
+            if (head.IsHit(food))
+            {
+                food.sym = head.sym;
+                pList.Add(food);
+                return true;
+            }
+            else 
+                return false;
+        }
     }
 }
