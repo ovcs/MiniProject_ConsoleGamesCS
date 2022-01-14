@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Console_Snake
@@ -19,12 +20,18 @@ namespace Console_Snake
             HorisontalLine downHline = new HorisontalLine(dStart, dWidth, dHeight, '*');
             VerticalLine leftVline = new VerticalLine(dStart, dStart, dHeight, '*');
             VerticalLine rightVline = new VerticalLine(dWidth, dStart, dHeight, '*');
+
             upHline.Drow(); downHline.Drow(); leftVline.Drow(); rightVline.Drow();
 
             Point p = new Point(dWidth / 2, dHeight / 2, '*');
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Drow();
-
+            for (int i = 0; i < 7; i++)
+            {
+                snake.Move();
+                Thread.Sleep(500);
+            }
+            
             Console.ReadKey();
         }
     }
