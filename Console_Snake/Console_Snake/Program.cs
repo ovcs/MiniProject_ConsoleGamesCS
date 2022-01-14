@@ -19,12 +19,8 @@ namespace Console_Snake
             Console.SetWindowSize(dWidth + 1, dHeight + 1);
             Console.SetBufferSize(dWidth + 2, dHeight + 1);
 
-            HorisontalLine upHline = new HorisontalLine(dStart, dWidth, dStart, filler1);
-            HorisontalLine downHline = new HorisontalLine(dStart, dWidth, dHeight, filler1);
-            VerticalLine leftVline = new VerticalLine(dStart, dStart, dHeight, filler1);
-            VerticalLine rightVline = new VerticalLine(dWidth, dStart, dHeight, filler1);
-
-            upHline.Drow(); downHline.Drow(); leftVline.Drow(); rightVline.Drow();
+            Wall walls = new Wall(dStart, dWidth, dHeight, filler1);
+            walls.Draw();
 
             Point p = new Point(dWidth / 2, dHeight / 2, filler1);
             Snake snake = new Snake(p, lengthSnake, Direction.RIGHT);
@@ -36,6 +32,11 @@ namespace Console_Snake
 
             while(true)
             {
+                if (walls.IsHit(snake) || snake.IsHitTail())
+                {
+                    break;
+                }
+
                 if (snake.Eat(food))
                 {
                     food = foodCreator.CreateFood();
