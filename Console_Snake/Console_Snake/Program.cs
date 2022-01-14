@@ -10,17 +10,16 @@ namespace Console_Snake
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(4,5,'*');
-            Point p2 = new Point(7, 1, '#');
-            Point p3 = new Point(2, 4, '%');
-            Point p4 = new Point(6, 2, '(');
-            p1.Draw();
+            int dStart = 0, dWidth = 78, dHeight = 24;
 
-            HorisontalLine hline = new HorisontalLine(1,30,8,'+');
-            hline.Drow();
+            Console.SetWindowSize(dWidth + 1, dHeight + 1);
+            Console.SetBufferSize(dWidth + 2, dHeight + 1);
 
-            VerticalLine vline = new VerticalLine(1, 1, 8, '+');
-            vline.Drow();
+            HorisontalLine upHline = new HorisontalLine(dStart, dWidth, dStart, '*');
+            HorisontalLine downHline = new HorisontalLine(dStart, dWidth, dHeight, '*');
+            VerticalLine leftVline = new VerticalLine(dStart, dStart, dHeight, '*');
+            VerticalLine rightVline = new VerticalLine(dWidth, dStart, dHeight, '*');
+            upHline.Drow(); downHline.Drow(); leftVline.Drow(); rightVline.Drow();
 
             Console.ReadKey();
         }
