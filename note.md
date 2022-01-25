@@ -1,6 +1,4 @@
-## class
-## interface
-## structure
+## class, interface and structure
 ## virtual
 ## override
 ## public 
